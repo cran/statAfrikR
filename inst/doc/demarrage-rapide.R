@@ -61,7 +61,7 @@ library(statAfrikR)
 ## ----ponderation, eval=FALSE--------------------------------------------------
 # plan <- appliquer_ponderations(
 #   data       = donnees,
-#   var_poids  = "poids_final",
+#   poids = "poids_final",
 #   var_strate = "strate",
 #   var_grappe = "grappe_id"
 # )
@@ -92,7 +92,7 @@ library(statAfrikR)
 #   donnees,
 #   var_age   = "age",
 #   var_sexe  = "sexe",
-#   var_poids = "poids_final",
+#   poids = "poids_final",
 #   titre     = "Pyramide des âges — Enquête 2023"
 # )
 # print(p)

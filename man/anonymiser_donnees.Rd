@@ -12,6 +12,7 @@ anonymiser_donnees(
   vars_generaliser = NULL,
   niveau_bruit = 0.05,
   graine = 42L,
+  seuil_cellule = 5L,
   rapport = TRUE
 )
 }
@@ -36,6 +37,10 @@ Défaut : NULL.}
 
 \item{graine}{integer — Graine aléatoire. Défaut : 42.}
 
+\item{seuil_cellule}{integer -- Seuil de confidentialite : les cellules
+avec effectif < seuil_cellule declenchent un avertissement.
+Defaut : 5L. Configurable selon la politique de l'INS.}
+
 \item{rapport}{logical — Produire un rapport d'anonymisation. Défaut : TRUE.}
 }
 \value{
@@ -48,7 +53,7 @@ standards IHSN/PARIS21 : suppression, masquage, generalisation,
 perturbation et pseudonymisation des variables sensibles.
 }
 \examples{
-\donttest{
+\dontrun{
   resultat <- anonymiser_donnees(
     donnees_enquete,
     vars_supprimer  = c("nom", "prenom", "telephone"),

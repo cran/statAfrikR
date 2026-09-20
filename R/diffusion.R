@@ -24,7 +24,7 @@
 #' @param ouvrir logical — Ouvrir le rapport après génération. Défaut : FALSE.
 #' @return Chemin du fichier généré (invisible).
 #' @examples
-#' \donttest{
+#' \dontrun{
 #'   generer_rapport(
 #'     donnees        = resultats_enquete,
 #'     template       = "bulletin_mensuel",
@@ -171,10 +171,13 @@ generer_rapport <- function(donnees,
 #'   (proportion de l'écart-type). Défaut : 0.05.
 #' @param graine integer — Graine aléatoire. Défaut : 42.
 #' @param rapport logical — Produire un rapport d'anonymisation. Défaut : TRUE.
+#' @param seuil_cellule integer -- Seuil de confidentialite : les cellules
+#'   avec effectif < seuil_cellule declenchent un avertissement.
+#'   Defaut : 5L. Configurable selon la politique de l'INS.
 #' @return Si \code{rapport = FALSE} : tibble anonymisé.
 #'   Si \code{rapport = TRUE} : liste avec \code{$donnees} et \code{$rapport}.
 #' @examples
-#' \donttest{
+#' \dontrun{
 #'   resultat <- anonymiser_donnees(
 #'     donnees_enquete,
 #'     vars_supprimer  = c("nom", "prenom", "telephone"),
@@ -192,8 +195,8 @@ anonymiser_donnees <- function(data,
                                 vars_generaliser = NULL,
                                 niveau_bruit     = 0.05,
                                 graine           = 42L,
+                                seuil_cellule    = 5L,
                                 rapport          = TRUE) {
-
   if (!is.data.frame(data)) {
     rlang::abort("`data` doit \u00eatre un data.frame ou tibble.")
   }
@@ -313,6 +316,32 @@ anonymiser_donnees <- function(data,
             paste(names(vars_generaliser), collapse = ", "))
   }
 
+  # --- Controle de confidentialite (INS) ---
+  # Detecter les cellules avec effectif < seuil_cellule
+  vars_cat <- names(data_anon)[sapply(data_anon, function(x)
+    is.character(x) || is.factor(x))]
+  alertes_conf <- list()
+  for (v in vars_cat) {
+    # Ignorer variables a haute cardinalite (identifiants)
+    if (length(unique(data_anon[[v]])) > nrow(data_anon) * 0.5) next
+    effectifs <- table(data_anon[[v]])
+    petites <- effectifs[effectifs > 0 & effectifs < seuil_cellule]
+    if (length(petites) > 0) {
+      alertes_conf[[v]] <- petites
+      rlang::warn(paste0(
+        "[Confidentialite] Variable '", v, "' : ",
+        length(petites), " cellule(s) avec n < ", seuil_cellule,
+        " (", paste(names(petites), "=", as.integer(petites),
+        collapse=", "), ").",
+        " Envisagez la suppression ou la fusion de categories."
+      ))
+    }
+  }
+  if (length(alertes_conf) == 0) {
+    message("[Confidentialite] Aucune cellule < ", seuil_cellule,
+            " detectee. OK.")
+  }
+
   # Rapport d'anonymisation
   rapport_anon <- tibble::tibble(
     operation    = names(operations),
@@ -354,7 +383,7 @@ anonymiser_donnees <- function(data,
 #' @param version character — Version SDMX. Défaut : "2.1".
 #' @return Chemin du fichier exporté (invisible).
 #' @examples
-#' \donttest{
+#' \dontrun{
 #'   exporter_sdmx(
 #'     data            = indicateurs_regionaux,
 #'     flux_donnees    = "BEN_IDH_2023",
@@ -479,7 +508,7 @@ exporter_sdmx <- function(data,
 #' @param langue character — Langue principale. Défaut : "fr".
 #' @return Chemin du fichier généré (invisible).
 #' @examples
-#' \donttest{
+#' \dontrun{
 #'   generer_metadonnees_ddi(
 #'     data        = donnees_emop,
 #'     titre       = "Enquête Modulaire sur les Conditions de Vie — 2023",
@@ -671,7 +700,7 @@ generer_metadonnees_ddi <- function(data,
 #'   README automatique. Défaut : NULL.
 #' @return Chemin de l'archive ZIP (invisible).
 #' @examples
-#' \donttest{
+#' \dontrun{
 #'   compresser_package_diffusion(
 #'     donnees              = donnees_emop_anon,
 #'     repertoire_sortie    = "diffusion/",
