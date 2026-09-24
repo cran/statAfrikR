@@ -1,4 +1,4 @@
-fce1efe34022b6f4d725dd5f2e17badd *DESCRIPTION
+acaa54acca34fac15c9500f6da7dce46 *DESCRIPTION
 c38868317ca03460817e9a58e31e5a0c *NAMESPACE
 24b6c163b52967fa44bbfe99885d83dd *NEWS.md
 917557eb2725c949af4dedfa1694d3a4 *R/analyse.R
@@ -18,7 +18,7 @@ c6e321c3423d8c02163c39027f7031dc *R/ipm.R
 c5794953b0bb2071448f3b63bcdad3eb *R/odd.R
 925ce6498ae3a47fb92a334ffda742a0 *R/pauvrete.R
 d4ba36f03068481b6d0acb37b5658fda *R/pib.R
-0cb8cdb56a5d12dd3a29b820599340be *R/rapports.R
+83272a9d7d0f4169d5f08da77bbee3fb *R/rapports.R
 39b004644f13bbef4161806c3da7d255 *R/sante.R
 9fd5f9f97a3791a7c770bbb9097797e5 *R/sondage.R
 5576929440211436c83e6d532d3c2c6e *R/statAfrikR-package.R
@@ -26,7 +26,7 @@ d4ba36f03068481b6d0acb37b5658fda *R/pib.R
 f5e2f81b60989f934abca0258f6bc57a *R/traitement.R
 2654ec0f2c26dd584010d931fa662f91 *R/validation_ins.R
 eac168986557396ee40be6ce3992c628 *R/visualisation.R
-15a4cf547a4fbcc32ce7a03461b33d77 *README.md
+179a047495c7ef2579925965b4a36999 *README.md
 76e123f5dcc8dee07678412adc0a2a84 *build/partial.rdb
 2321564d79e6e2f85ccde8ec63c181dd *build/vignette.rds
 e98c4c06d43eea09201475e5c4a11469 *data/saf_cameroun_departements.rda
@@ -39,8 +39,8 @@ f05b193f4ff95c7cfb2e68b9ae712e4f *data/saf_sadc.rda
 0754802ad7b0761bdd4377fba9265f95 *data/saf_senegal_regions.rda
 8c87da5e62b06a148b543c625981524b *data/saf_subdivisions_afrique.rda
 3c3e3de6100f707303b693f772ce9baa *inst/INS_READINESS.md
-82434319803b6e7949c154f7d1edcaf1 *inst/doc/contributeurs.Rmd
-c908bed1a7f1473701f557867cd97b20 *inst/doc/contributeurs.html
+9e321da2b9280f971012a0bf26945581 *inst/doc/contributeurs.Rmd
+150418de882dba3d77a04cd47fc24694 *inst/doc/contributeurs.html
 444b3fd3ecc8e40743fac77dbed36321 *inst/doc/demarrage-rapide.R
 89d0cc7bbd031a442eab7aec2c2527da *inst/doc/demarrage-rapide.Rmd
 8621b83a2822247e479d05abe3df9168 *inst/doc/demarrage-rapide.html
@@ -220,7 +220,7 @@ d23d7cdf0f4725f87f70f7d5a5f2d72e *tests/testthat/test-sondage.R
 dcbee055a0e997257daa6512b6580b53 *tests/testthat/test-traitement.R
 3bd099720e86be5b78e0ef5b903c9fe3 *tests/testthat/test-validation_ins.R
 90d1ea89d9f9350277830597fd751981 *tests/testthat/test-visualisation.R
-82434319803b6e7949c154f7d1edcaf1 *vignettes/contributeurs.Rmd
+9e321da2b9280f971012a0bf26945581 *vignettes/contributeurs.Rmd
 89d0cc7bbd031a442eab7aec2c2527da *vignettes/demarrage-rapide.Rmd
 615f3622939242d2a8fe2ab2a85ee9f1 *vignettes/enquete-ponderee.Rmd
 6a06f775b3d345a10bc52c3c69315738 *vignettes/indicateurs-odd.Rmd

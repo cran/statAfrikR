@@ -1,6 +1,6 @@
 Package: statAfrikR
 Title: Statistical Tools for African National Statistics Institutes
-Version: 0.2.0
+Version: 0.2.1
 Authors@R: c(
     person(
       given   = "Dikers",
@@ -30,7 +30,8 @@ License: GPL (>= 3)
 Encoding: UTF-8
 RoxygenNote: 7.3.3
 Language: fr
-URL: https://statafrikr.org/, https://github.com/damoko2004/statAfrikR
+URL: https://statafrikr.org/, https://github.com/damoko2004/statAfrikR,
+        https://damoko2004.github.io/statAfrikR/
 BugReports: https://github.com/damoko2004/statAfrikR/issues
 Depends: R (>= 4.2.0)
 Imports: dplyr (>= 1.1.0), forcats (>= 1.0.0), ggplot2 (>= 3.4.0),
@@ -45,11 +46,11 @@ Suggests: shiny (>= 1.7.0), flextable (>= 0.9.0), httr2 (>= 0.2.0),
 Config/testthat/edition: 3
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2026-09-20 12:57:05 UTC; dickersamoko
+Packaged: 2026-09-24 11:57:50 UTC; dickersamoko
 LazyData: true
 LazyDataCompression: xz
 Author: Dikers Amoko [aut, cre, ctb],
   Josue Honore Dasse [ctb]
 Maintainer: Dikers Amoko <diamoko@gmail.com>
 Repository: CRAN
-Date/Publication: 2026-09-20 13:20:02 UTC
+Date/Publication: 2026-09-24 12:40:02 UTC

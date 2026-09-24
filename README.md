@@ -3,9 +3,13 @@
 <!-- badges: start -->
 [![R CMD Check](https://github.com/damoko2004/statAfrikR/actions/workflows/R-CMD-check.yml/badge.svg)](https://github.com/damoko2004/statAfrikR/actions/workflows/R-CMD-check.yml)
 [![Codecov](https://app.codecov.io/gh/damoko2004/statAfrikR/branch/main/graph/badge.svg)](https://app.codecov.io/gh/damoko2004/statAfrikR)
+[![CRAN](https://www.r-pkg.org/badges/version/statAfrikR)](https://cran.r-project.org/package=statAfrikR)
+[![Downloads](https://cranlogs.r-pkg.org/badges/statAfrikR)](https://cran.r-project.org/package=statAfrikR)
 <!-- badges: end -->
 
 Package R open source pour les Instituts Nationaux de Statistique (INS) africains.
+
+> **v0.2.0** · 54 pays · 888 subdivisions · 135+ fonctions · 1 220+ téléchargements CRAN · 100% hors ligne
 
 ## Objectif
 
@@ -67,9 +71,9 @@ Ce package tient compte de :
 ## Documentation
 
 - 🌐 [Site de documentation](https://damoko2004.github.io/statAfrikR/)
-- 📖 [Vignette : Démarrage rapide](https://damoko2004.github.io/statAfrikR/articles/01-demarrage-rapide.html)
-- 📊 [Vignette : Enquête pondérée](https://damoko2004.github.io/statAfrikR/articles/02-enquete-ponderee.html)
-- 📐 [Vignette : Indicateurs ODD](https://damoko2004.github.io/statAfrikR/articles/03-indicateurs-odd.html)
+- 📖 [Vignette : Démarrage rapide](https://damoko2004.github.io/statAfrikR/articles/demarrage-rapide.html)
+- 📊 [Vignette : Enquête pondérée](https://damoko2004.github.io/statAfrikR/articles/enquete-ponderee.html)
+- 📐 [Vignette : Indicateurs ODD](https://damoko2004.github.io/statAfrikR/articles/indicateurs-odd.html)
 
 ## Contribuer
 
